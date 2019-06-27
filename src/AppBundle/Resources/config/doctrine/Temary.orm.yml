@@ -1,0 +1,29 @@
+AppBundle\Entity\Temary:
+  type: entity
+  table: null
+  repositoryClass: AppBundle\Repository\TemaryRepository
+  id:
+    id:
+      type: integer
+      id: true
+      generator:
+        strategy: AUTO
+  fields:
+    temary:
+      type: string
+      length: 255
+    date:
+      type: date
+  oneToOne:
+    subjects:
+      targetEntity: AppBundle\Entity\Subject
+      joinColumn:
+        name: subjetc_id
+        referencedColumnName: id
+    teacher:
+      targetEntity: AppBundle\Entity\Teacher
+      joinColumn:
+        name: teacher_id
+        referencedColumnName: id
+
+  lifecycleCallbacks: {  }

@@ -1,0 +1,29 @@
+AppBundle\Entity\Assistance:
+  type: entity
+  table: null
+  repositoryClass: AppBundle\Repository\AssistanceRepository
+  id:
+    id:
+      type: integer
+      id: true
+      generator:
+        strategy: AUTO
+  fields:
+    assistance:
+      type: boolean
+    date:
+      type: date
+  oneToOne:
+    students:
+      targetEntity: AppBundle\Entity\Student
+      joinColumn:
+        name: student_id
+        referencedColumnName: id
+    subjects:
+      targetEntity: AppBundle\Entity\Subject
+      joinColumn:
+        name: subject_id
+        referencedColumnName: id
+
+
+  lifecycleCallbacks: {  }

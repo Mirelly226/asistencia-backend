@@ -1,0 +1,31 @@
+AppBundle\Entity\Student:
+  type: entity
+  table: null
+  repositoryClass: AppBundle\Repository\StudentRepository
+  id:
+    id:
+      type: integer
+      id: true
+      generator:
+        strategy: AUTO
+  fields:
+    name:
+      type: string
+      length: '50'
+    lastname:
+      type: string
+      length: '50'
+    ci:
+      type: integer
+      unique: true
+    email:
+      type: string
+      length: '100'
+    password:
+      type: string
+      length: '50'
+  manyToMany:
+    subjects:
+      targetEntity: AppBundle\Entity\Subject
+      mappedBy: students
+  lifecycleCallbacks: {  }

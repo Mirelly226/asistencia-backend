@@ -1,0 +1,25 @@
+AppBundle\Entity\Teacher:
+  type: entity
+  table: null
+  repositoryClass: AppBundle\Repository\TeacherRepository
+  id:
+    id:
+      type: integer
+      id: true
+      generator:
+        strategy: AUTO
+  fields:
+    ci:
+      type: integer
+      unique: true
+    name:
+      type: string
+      length: '50'
+    lastname:
+      type: string
+      length: '50'
+    password:
+      type: string
+      length: 255
+
+  lifecycleCallbacks: {  }

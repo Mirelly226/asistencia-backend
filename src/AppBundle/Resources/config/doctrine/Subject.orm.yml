@@ -1,0 +1,37 @@
+AppBundle\Entity\Subject:
+  type: entity
+  table: null
+  repositoryClass: AppBundle\Repository\SubjectRepository
+  id:
+    id:
+      type: integer
+      id: true
+      generator:
+        strategy: AUTO
+  fields:
+    name:
+      type: string
+      length: '100'
+    code:
+      type: string
+      length: '50'
+  oneToOne:
+    teacher:
+      targetEntity: AppBundle\Entity\Teacher
+      joinColumn:
+        name: teacher_id
+        referencedColumnName: id
+  manyToMany:
+    students:
+      targetEntity: AppBundle\Entity\Student
+      inversedBy: subjects
+      joinTable:
+        name: subject_student
+        joinColumns:
+          subject_id:
+            referencedColumnName: id
+        inverseJoinColumns:
+          student_id:
+            referencedColumnName: id
+
+  lifecycleCallbacks: {  }
