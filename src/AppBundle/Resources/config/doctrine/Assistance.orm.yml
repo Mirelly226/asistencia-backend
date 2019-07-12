@@ -13,7 +13,7 @@ AppBundle\Entity\Assistance:
       type: boolean
     date:
       type: date
-  oneToOne:
+  manyToOne:
     students:
       targetEntity: AppBundle\Entity\Student
       joinColumn:

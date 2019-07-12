@@ -39,7 +39,7 @@ twig:
 # Doctrine Configuration
 doctrine:
     dbal:
-        default_connection: mysql
+        default_connection: pgsql
         connections:
             mysql:
                 driver: pdo_mysql

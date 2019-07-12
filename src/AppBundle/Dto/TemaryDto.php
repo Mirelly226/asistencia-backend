@@ -1,35 +1,40 @@
 <?php
 
-namespace AppBundle\Entity;
 
-/**
- * Temary
- */
-class Temary
+namespace AppBundle\Dto;
+
+use JMS\Serializer\Annotation\Type;
+
+class TemaryDto
 {
     /**
-     * @var int
+     * @Type("int")
      */
     private $id;
 
     /**
-     * @var string
+     * @Type("string")
      */
     private $temary;
 
     /**
-     * @var \DateTime
+     * @Type("String")
      */
     private $date;
     /**
-     * @var Subject
+     * @Type("AppBundle\Dto\SubjectDto")
      */
     private $subjects;
 
 
     /**
-     * Get id
-     *
+     * TemaryDto constructor.
+     */
+    public function __construct()
+    {
+    }
+
+    /**
      * @return int
      */
     public function getId()
@@ -38,22 +43,16 @@ class Temary
     }
 
     /**
-     * Set temary
-     *
-     * @param string $temary
-     *
-     * @return Temary
+     * @param int $id
+     * @return TemaryDto
      */
-    public function setTemary($temary)
+    public function setId($id)
     {
-        $this->temary = $temary;
-
+        $this->id = $id;
         return $this;
     }
 
     /**
-     * Get temary
-     *
      * @return string
      */
     public function getTemary()
@@ -62,27 +61,31 @@ class Temary
     }
 
     /**
-     * Set date
-     *
-     * @param \DateTime $date
-     *
-     * @return Temary
+     * @param string $temary
+     * @return TemaryDto
      */
-    public function setDate($date)
+    public function setTemary($temary)
     {
-        $this->date = $date;
-
+        $this->temary = $temary;
         return $this;
     }
 
     /**
-     * Get date
-     *
      * @return \DateTime
      */
     public function getDate()
     {
         return $this->date;
+    }
+
+    /**
+     * @param \DateTime $date
+     * @return TemaryDto
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+        return $this;
     }
 
     /**
@@ -95,13 +98,13 @@ class Temary
 
     /**
      * @param Subject $subjects
+     * @return TemaryDto
      */
     public function setSubjects($subjects)
     {
         $this->subjects = $subjects;
+        return $this;
     }
 
 
-
 }
-
